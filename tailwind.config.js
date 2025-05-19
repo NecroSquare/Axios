@@ -1,12 +1,11 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-    plugins: {
-        '@tailwindcss/postcss': {
-            optimize: {
-                minify: false
-            }
-        },
-    },
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./web/index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 };
-
-export default config;
