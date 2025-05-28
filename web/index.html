@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Connects - Bridging Digital Solutions</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme {
+      --color-lightPrime: #3b82f6;
+      --color-lightSecondary: #a855f7;
+      --color-lightPrimeHover: #2563eb;
+      --color-lightSecondaryHover: #9333ea;
+      --color-darkSecondary: #4B164C;
+      --color-darkSecondaryHover: #7A1CAC;
+      --color-darkText: #F8E7F6;
+    }
+  </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-700 font-sans dark:text-zinc-100">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-700 shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div
+          class="text-2xl font-bold flex items-center"
+        >
+        <p>🌍</p><span class="bg-gradient-to-r bg-clip-text text-transparent from-lightPrimeHover to-lightSecondaryHover dark:bg-gradient-to-r dark:from-lightPrime dark:to-lightSecondar"> Tech Connects</span>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+          <button
+            id="menu-toggle"
+            class="text-lightSecondary focus:outline-none"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+          <li class="group relative">
+            <a
+              href="index.html"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
+            >
+              Home
+            </a>
+          </li>
+          <li class="group relative">
+            <a
+              href="#courses"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
+            >
+              Courses
+            </a>
+          </li>
+          <li class="group relative">
+            <a
+              href="#sustainability"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
+            >
+              Sustainability
+            </a>
+          </li>
+          <li class="group relative">
+            <a
+              href="#testimonials"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
+            >
+              Testimonials
+            </a>
+          </li>
+          <li class="group relative">
+            <a
+              href="#contact"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
+            >
+              Contact
+            </a>
+          </li>
+          <div class="flex items-center space-x-4">
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search courses..."
+              class="border border-lightPrime dark:border-lightSecondary rounded-lg p-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-lightPrimeHover dark:focus:ring-lightSecondaryHover"
+            />
+            <button
+              onclick="searchCourses()"
+              class="bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-4 py-2 rounded hover:bg-gradient-to-r transition-all duration-300 hover:brightness-125"
+            >
+              Search
+            </button>
+            <i
+              id="dark-mode-toggle"
+              class="fas fa-sun dark-mode-toggle text-yellow-500"
+            ></i>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="bg-gradient-to-r from-lightPrime to-lightSecondary text-white py-20"
+    >
+      <div class="container mx-auto text-center px-4">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 fade-in">
+          Bridging Digital Solutions for a Sustainable Tomorrow
+        </h1>
+        <p class="text-lg sm:text-xl mb-8 fade-in">
+          Free coding and AI resources to empower a sustainable future.
+        </p>
+
+        <!-- Glowing button -->
+        <div class="relative inline-flex group">
+          <!-- Glow Effect -->
+          <div
+            class="absolute transition-all duration-1000 opacity-70 -inset-px bg-lightSecondaryHover rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"
+          ></div>
+
+          <!-- Button -->
+          <a
+            href="#courses"
+            title="Get quote now"
+            class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-lightPrimeHover transition-all duration-200 bg-white ring-2 ring-lightPrime font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lightSecondaryHover hover:text-lightSecondary hover:ring-lightSecondaryHover"
+            role="button"
+          >
+            Explore Free Courses
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-white dark:bg-gray-700">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-lightSecondary dark:text-white mb-12"
+        >
+          Free Learning Resources
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Course 1 -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              Fundamental Python Programming
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Learn Python basics for AI, data science, and sustainable tech
+              solutions.
+            </p>
+            <button
+              onclick="openModal('python-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+          <!-- Course 2 -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              AI & Machine Learning Basics
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Explore AI concepts to solve real-world sustainability challenges.
+            </p>
+            <button
+              onclick="openModal('ai-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+          <!-- Course 3 -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              Web Development with JavaScript
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Build an interactive web applications with a focus on efficiency.
+            </p>
+            <button
+              onclick="openModal('js-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+          <!-- Course 4: Data Analysis with Pandas -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              Data Analysis with Pandas
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Analyze data to support sustainable decision-making, like energy
+              consumption trends.
+            </p>
+            <button
+              onclick="openModal('pandas-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+          <!-- Course 5: Introduction to IoT for Sustainability -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              Introduction to IoT for Sustainability
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Learn IoT basics to create smart, sustainable solutions like
+              efficient farming.
+            </p>
+            <button
+              onclick="openModal('iot-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+          <!-- Course 6: Ethical AI Development -->
+          <div
+            class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-300 mb-2"
+            >
+              Ethical AI Development
+            </h3>
+            <p
+              class="text-lightSecondaryHover dark:text-blue-200 text-sm sm:text-base mb-4"
+            >
+              Develop AI responsibly to ensure positive impacts on society and
+              the environment.
+            </p>
+            <button
+              onclick="openModal('ethical-ai-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
+            >
+              <span> Preview Material </span>
+            </button>
+            <a
+              href="python-course.html"
+              class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110"
+            >
+              <span
+                class="inline-block transition-all duration-300 group-hover:scale-110"
+              >
+                Start Learning
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals for Preview -->
+    <div
+      id="python-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">Python Preview</h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          A quick look at variables in Python:
+        </p>
+        <pre
+          class="bg-gray-100 dark:bg-gray-700 p-4 text-sm overflow-auto"
+        ><code>x = 5
+print("Value of x is:", x)</code></pre>
+        <button
+          onclick="closeModal('python-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="ai-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">AI Preview</h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          Introduction to AI concepts:
+        </p>
+        <p class="text-gray-600 dark:text-gray-200">
+          AI can optimize energy usage by predicting consumption patterns.
+        </p>
+        <button
+          onclick="closeModal('ai-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="js-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+          JavaScript Preview
+        </h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          A simple JavaScript example:
+        </p>
+        <pre
+          class="bg-gray-100 dark:bg-gray-700 p-4 text-sm overflow-auto"
+        ><code>let message = "Hello, World!";
+console.log(message);</code></pre>
+        <button
+          onclick="closeModal('js-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="pandas-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">Pandas Preview</h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          A quick look at loading data with Pandas:
+        </p>
+        <pre
+          class="bg-gray-100 dark:bg-gray-700 p-4 text-sm overflow-auto"
+        ><code>import pandas as pd
+data = pd.DataFrame({'Energy (kWh)': [100, 120, 90]})
+print(data)</code></pre>
+        <button
+          onclick="closeModal('pandas-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="iot-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">IoT Preview</h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          Introduction to IoT concepts:
+        </p>
+        <p class="text-gray-600 dark:text-gray-200">
+          IoT devices can monitor soil moisture for efficient farming.
+        </p>
+        <button
+          onclick="closeModal('iot-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="ethical-ai-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+      >
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+          Ethical AI Preview
+        </h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-4">
+          Key principles of ethical AI:
+        </p>
+        <p class="text-gray-600 dark:text-gray-200">
+          Ensure AI systems are fair, transparent, and environmentally
+          responsible.
+        </p>
+        <button
+          onclick="closeModal('ethical-ai-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="py-16 bg-sky-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-lightPrime dark:text-white mb-12"
+        >
+          Coding for Sustainability
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              AI for Energy Efficiency
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Learn how AI can optimize energy usage in smart cities, reducing
+              waste and promoting sustainability.
+            </p>
+          </div>
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              Sustainable Web Practices
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              Sustainable Web Practices
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              Sustainable Web Practices
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              Sustainable Web Practices
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+          <div
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
+            >
+              Sustainable Web Practices
+            </h3>
+            <p
+              class="text-lightPrimeHover group-hover:text-lightSecondaryHover dark:text-darkText dark:group-hover:text-purple-300 dark:brightness-110 text-sm sm:text-base"
+            >
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100 dark:bg-gray-600">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-lightPrimeHover dark:text-white mb-12"
+        >
+          What Our Learners Say
+        </h2>
+        <div class="grid grid-cols-4 gap-12">
+          <div
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+          >
+            <p
+              class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
+            >
+              "The sustainability focus inspired me to use coding for good.
+              Amazing resources!"
+            </p>
+            <p class="text-sky-100 font-semibold text-sm sm:text-base">
+              Rudi Santoso
+            </p>
+            <p class="text-gray-500 text-sm sm:text-base">
+              Aspiring Data Scientist
+            </p>
+          </div>
+          <div
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+          >
+            <p
+              class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
+            >
+              "The sustainability focus inspired me to use coding for good.
+              Amazing resources!"
+            </p>
+            <p class="text-sky-100 font-semibold text-sm sm:text-base">
+              Rudi Santoso
+            </p>
+            <p class="text-gray-500 text-sm sm:text-base">
+              Aspiring Data Scientist
+            </p>
+          </div>
+          <div
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+          >
+            <p
+              class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
+            >
+              "The sustainability focus inspired me to use coding for good.
+              Amazing resources!"
+            </p>
+            <p class="text-sky-100 font-semibold text-sm sm:text-base">
+              Rudi Santoso
+            </p>
+            <p class="text-gray-500 text-sm sm:text-base">
+              Aspiring Data Scientist
+            </p>
+          </div>
+          <div
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+          >
+            <p
+              class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
+            >
+              "The sustainability focus inspired me to use coding for good.
+              Amazing resources!"
+            </p>
+            <p class="text-sky-100 font-semibold text-sm sm:text-base">
+              Rudi Santoso
+            </p>
+            <p class="text-gray-500 text-sm sm:text-base">
+              Aspiring Data Scientist
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-blue-900 dark:bg-gray-900 text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">Ready to Learn?</h3>
+        <p class="text-sm sm:text-base mb-4">
+          Contact us: Jl. Balai Pustaka Baru I No.2, RT.2/RW.7, Rawamangun, Kec.
+          Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220
+        </p>
+        <p class="text-sm sm:text-base mb-4">
+          © 2025 Tech Connects By AXIOS. All rights reserved.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4"
+        >
+          <a href="#" class="hover:underline text-sm sm:text-base"
+            >Terms and Conditions</a
+          >
+          <a href="#" class="hover:underline text-sm sm:text-base"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".modal")
+            .forEach((modal) => modal.classList.add("hidden"));
+        }
+      });
+      document.querySelectorAll("a[href]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          if (link.href.includes("course")) {
+            if (!confirm("Are you ready to start learning?"))
+              e.preventDefault();
+          }
+        });
+      });
+
+      // Dark-mode enabler
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("dark-mode-toggle");
+        const html = document.documentElement;
+        toggle.addEventListener("click", function () {
+          html.classList.toggle("dark");
+          const isDark = html.classList.contains("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+
+          if (isDark) {
+            toggle.classList.remove("fa-sun");
+            toggle.classList.add("fa-moon");
+          } else {
+            toggle.classList.remove("fa-moon");
+            toggle.classList.add("fa-sun");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
