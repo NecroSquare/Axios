@@ -6,17 +6,21 @@
     <title>Introduction to IoT for Sustainability</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-    @custom-variant dark (&:where(.dark, .dark *));
-    @theme {
-      --color-lightPrime: #3b82f6;
-      --color-lightSecondary: #a855f7;
-      --color-lightPrimeHover: #2563eb;
-      --color-lightSecondaryHover: #9333ea;
-      --color-darkSecondary: #4B164C;
-      --color-darkSecondaryHover: #7A1CAC;
-      --color-darkText: #F8E7F6;
-    }
-  </style>
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --color-lightPrime: #3b82f6;
+        --color-lightSecondary: #a855f7;
+        --color-lightPrimeHover: #2563eb;
+        --color-lightSecondaryHover: #9333ea;
+        --color-darkSecondary: #4b164c;
+        --color-darkSecondaryHover: #7a1cac;
+        --color-darkText: #f8e7f6;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -51,63 +55,85 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 font-sans">
+  <body class="bg-gray-100 dark:bg-gray-800 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white dark:bg-gray-700 shadow-md sticky top-0 z-50">
       <nav
         class="container mx-auto flex justify-between items-center py-4 px-6"
       >
-        <div class="text-2xl font-bold text-blue-900 flex items-center">
-          <span>🌍 Tech Connects</span>
+        <div class="text-2xl font-bold flex items-center">
+          <p>🌍</p>
+          <span
+            class="bg-gradient-to-r bg-clip-text text-transparent from-lightPrimeHover to-lightSecondaryHover dark:bg-gradient-to-r dark:from-lightPrime dark:to-lightSecondar"
+          >
+            Tech Connects</span
+          >
         </div>
         <div class="flex items-center space-x-4 md:hidden">
-          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+          <button
+            id="menu-toggle"
+            class="text-lightSecondary focus:outline-none"
+          >
             <i class="fas fa-bars text-2xl"></i>
           </button>
         </div>
         <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
-          <li>
-            <a href="index.html" class="text-blue-600 hover:text-blue-800"
-              >Home</a
+          <li class="group relative">
+            <a
+              href="index.html"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
             >
+              Home
+            </a>
           </li>
-          <li>
-            <a href="#courses" class="text-blue-600 hover:text-blue-800"
-              >Courses</a
+          <li class="group relative">
+            <a
+              href="#courses"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
             >
+              Courses
+            </a>
           </li>
-          <li>
-            <a href="#sustainability" class="text-blue-600 hover:text-blue-800"
-              >Sustainability</a
+          <li class="group relative">
+            <a
+              href="#sustainability"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
             >
+              Sustainability
+            </a>
           </li>
-          <li>
-            <a href="#testimonials" class="text-blue-600 hover:text-blue-800"
-              >Testimonials</a
+          <li class="group relative">
+            <a
+              href="#testimonials"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
             >
+              Testimonials
+            </a>
           </li>
-          <li>
-            <a href="#contact" class="text-blue-600 hover:text-blue-800"
-              >Contact</a
+          <li class="group relative">
+            <a
+              href="#contact"
+              class="relative text-lightPrimeHover transition-all duration-200 hover:text-lightPrime before:content-[''] before:absolute before:bottom-[-5px] before:left-1/2 before:translate-x-[-50%] before:w-0 before:h-[2px] before:bg-lightPrime before:transition-all before:duration-300 before:ease-out group-hover:before:w-full dark:text-lightSecondary dark:hover:text-lightSecondaryHover dark:before:bg-lightSecondary"
             >
+              Contact
+            </a>
           </li>
           <div class="flex items-center space-x-4">
             <input
               type="text"
               id="search-bar"
               placeholder="Search courses..."
-              class="border rounded-lg p-2 w-full md:w-auto"
+              class="border border-lightPrime dark:border-lightSecondary rounded-lg p-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-lightPrimeHover dark:focus:ring-lightSecondaryHover"
             />
             <button
               onclick="searchCourses()"
-              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              class="bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-4 py-2 rounded hover:bg-gradient-to-r transition-all duration-300 hover:brightness-125"
             >
               Search
             </button>
             <i
               id="dark-mode-toggle"
               class="fas fa-sun dark-mode-toggle text-yellow-500"
-              onclick="toggleDarkMode()"
             ></i>
           </div>
         </ul>
@@ -116,10 +142,10 @@
 
     <section class="py-16">
       <div class="container mx-auto px-6">
-        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6 dark:text-white">
           Introduction to IoT for Sustainability
         </h1>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-700 mb-4 dark:text-gray-100">
           Learn IoT basics to create smart, sustainable solutions like efficient
           farming.
         </p>
@@ -140,25 +166,25 @@
         </div>
 
         <!-- Course Material -->
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Lesson 1: What is IoT?
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             Understand the basics of Internet of Things and its role in
             sustainability.
           </p>
-          <p class="text-gray-600">
+          <p class="text-gray-600 dark:text-gray-100">
             IoT connects devices to collect and share data for efficient
             resource use.
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Lesson 2: IoT Sensors
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             Learn about sensors used in IoT for environmental monitoring.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
@@ -172,11 +198,11 @@ print(f"Temperature: {sensor_data['temperature']}°C, Moisture: {sensor_data['mo
           >
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Lesson 3: IoT Communication
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             Explore how IoT devices communicate data.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
@@ -190,11 +216,11 @@ print(send_data({'moisture': 40}))
           >
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Sustainability Project: Smart Farming Monitor
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             Create a simple IoT system to monitor farming conditions.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
@@ -211,11 +237,11 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
         </div>
 
         <!-- Quiz Section -->
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Quiz: Test Your Knowledge
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             What is the primary purpose of IoT sensors in farming?
           </p>
           <div class="mt-4">
@@ -242,11 +268,11 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
         </div>
 
         <!-- Downloadable Resource -->
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md mb-6 ring-1 ring-lightPrimeHover transition-all duration-75 dark:ring-lightSecondaryHover">
+          <h2 class="text-2xl font-semibold text-blue-800 dark:text-white mb-4">
             Downloadable Resource
           </h2>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 dark:text-gray-50">
             Download the course material as a text file for offline learning.
           </p>
           <a
@@ -260,15 +286,14 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
         <div class="text-center">
           <a
             href="index.html"
-            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 dark:bg-lightSecondary dark:hover:bg-lightSecondaryHover transition"
             >Back to Courses</a
           >
-        </div>
       </div>
     </section>
 
     <div
-      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 text-white p-4 sm:p-6 lg:p-8"
+      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 dark:bg-gray-700 text-white p-4 sm:p-6 lg:p-8"
     >
       <p class="text-lg md:text-xl text-center mb-4">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
@@ -290,37 +315,13 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
       </div>
     </div>
 
-    <footer class="bg-blue-900 text-white py-8">
+    <footer class="bg-blue-900 dark:bg-gray-900 text-white py-8">
       <div class="container mx-auto px-6 text-center">
         <p>© 2025 Tech Connects. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
-      function toggleDarkMode() {
-        const toggle = document.getElementById("dark-mode-toggle");
-        document.body.classList.toggle("dark-mode");
-        if (document.body.classList.contains("dark-mode")) {
-          toggle.classList.remove("fa-sun");
-          toggle.classList.add("fa-moon");
-          toggle.style.color = "#f1c40f";
-        } else {
-          toggle.classList.remove("fa-moon");
-          toggle.classList.add("fa-sun");
-          toggle.style.color = "#f59e0b";
-        }
-        localStorage.setItem(
-          "darkMode",
-          document.body.classList.contains("dark-mode")
-        );
-      }
-      if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark-mode");
-        const toggle = document.getElementById("dark-mode-toggle");
-        toggle.classList.remove("fa-sun");
-        toggle.classList.add("fa-moon");
-        toggle.style.color = "#f1c40f";
-      }
       window.addEventListener("scroll", () => {
         const totalHeight = document.body.scrollHeight - window.innerHeight;
         const progress = (window.scrollY / totalHeight) * 100;
@@ -358,6 +359,43 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
         a.click();
         URL.revokeObjectURL(url);
       }
+    </script>
+
+    <script>
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".modal")
+            .forEach((modal) => modal.classList.add("hidden"));
+        }
+      });
+      document.querySelectorAll("a[href]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          if (link.href.includes("course")) {
+            if (!confirm("Are you ready to start learning?"))
+              e.preventDefault();
+          }
+        });
+      });
+
+      // Dark-mode enabler
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("dark-mode-toggle");
+        const html = document.documentElement;
+        toggle.addEventListener("click", function () {
+          html.classList.toggle("dark");
+          const isDark = html.classList.contains("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+
+          if (isDark) {
+            toggle.classList.remove("fa-sun");
+            toggle.classList.add("fa-moon");
+          } else {
+            toggle.classList.remove("fa-moon");
+            toggle.classList.add("fa-sun");
+          }
+        });
+      });
     </script>
   </body>
 </html>
