@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 dark:bg-gray-800">
     <!-- Header -->
     <header class="bg-white dark:bg-gray-700 shadow-md sticky top-0 z-50">
       <nav
@@ -91,7 +91,7 @@
               type="text"
               id="search-bar"
               placeholder="Search courses..."
-              class="border border-lightPrime dark:border-lightSecondary rounded-lg p-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-lightPrimeHover dark:focus:ring-lightSecondaryHover"
+              class="border border-lightPrime dark:border-lightSecondary placeholder-gray-400 rounded-lg p-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-lightPrimeHover dark:focus:ring-lightSecondaryHover"
             />
             <button
               onclick="searchCourses()"
@@ -112,7 +112,7 @@
     <div class="max-w-5xl mx-auto my-6 text-right">
       <button
         onclick="openDiscussionModal()"
-        class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        class="bg-lightPrimeHover dark:bg-lightSecondaryHover text-white px-4 py-2 rounded hover:bg-lightPrime dark:hover:bg-lightSecondary transition-all duration-200"
       >
         Ask Question +
       </button>
@@ -121,8 +121,8 @@
     <!-- Discussions Container -->
     <div id="discussionContainer" class="max-w-5xl mx-auto space-y-10">
       <!-- Dummy Discussion -->
-      <div class="bg-white shadow rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+      <div class="bg-white shadow rounded-lg p-6 dark:bg-gray-700">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
           🐞 Bug: Cannot login when using Safari
         </h2>
         <p class="text-gray-600 mb-4 dark:text-gray-50">
@@ -135,12 +135,12 @@
         <div class="mt-4">
           <textarea
             placeholder="Write a reply..."
-            class="w-full p-3 border border-gray-300 rounded-md"
+            class="w-full p-3 border border-gray-300 rounded-md dark:placeholder-gray-400 dark:text-white"
             id="reply-input-0"
           ></textarea>
           <button
             onclick="addReply(0)"
-            class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            class="mt-2 bg-lightPrimeHover dark:bg-lightSecondaryHover text-white px-4 py-2 rounded hover:bg-lightPrime dark:hover:bg-lightSecondary transition-all duration-200"
           >
             Reply
           </button>
@@ -151,32 +151,32 @@
     <!-- Modal -->
     <div
       id="modal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+      class="fixed inset-0 bg-blur backdrop-blur-sm bg-opacity-50 flex items-center justify-center hidden z-50"
     >
-      <div class="bg-white p-6 rounded-lg w-full max-w-xl">
-        <h3 class="text-xl font-semibold mb-4">New Discussion</h3>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg w-full max-w-xl">
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">New Discussion</h3>
         <input
           type="text"
           id="newTitle"
           placeholder="Enter title..."
-          class="w-full p-3 border border-gray-300 rounded-md mb-3"
+          class="w-full p-3 border border-gray-300 dark:text-white rounded-md mb-3"
         />
         <textarea
           id="newBody"
           rows="4"
           placeholder="Enter description..."
-          class="w-full p-3 border border-gray-300 rounded-md"
+          class="w-full p-3 border border-gray-300 dark:text-white rounded-md"
         ></textarea>
         <div class="mt-4 text-right space-x-2">
           <button
             onclick="closeDiscussionModal()"
-            class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+            class="px-4 py-2 bg-gray-300 dark:bg-gray-400 rounded hover:bg-gray-400 dark:hover:bg-gray-300 transition-all duration-200 dark:text-white"
           >
             Cancel
           </button>
           <button
             onclick="addDiscussion()"
-            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+            class="px-4 py-2 bg-lightPrimeHover dark:bg-lightSecondaryHover text-white rounded hover:bg-lightPrime dark:hover:bg-lightSecondary transition-all duration-200"
           >
             Add
           </button>
@@ -204,14 +204,14 @@
 
         const container = document.getElementById("discussionContainer");
         const div = document.createElement("div");
-        div.className = "bg-white shadow rounded-lg p-6";
+        div.className = "bg-white shadow rounded-lg p-6 dark:bg-gray-700";
         div.innerHTML = `
-        <h2 class="text-2xl font-bold text-gray-800 mb-2">${title}</h2>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">${title}</h2>
         <p class="text-gray-600 mb-4 dark:text-gray-50">${body}</p>
         <div class="ml-4 pl-4 space-y-4" id="thread-${discussionId}"></div>
         <div class="mt-4">
-          <textarea placeholder="Write a reply..." class="w-full p-3 border border-gray-300 rounded-md" id="reply-input-${discussionId}"></textarea>
-          <button onclick="addReply(${discussionId})" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Reply</button>
+          <textarea placeholder="Write a reply..." class="w-full p-3 border border-gray-300 rounded-md dark:placeholder-gray-400 dark:text-white" id="reply-input-${discussionId}"></textarea>
+          <button onclick="addReply(${discussionId})" class="mt-2 bg-lightPrimeHover dark:bg-lightSecondaryHover text-white px-4 py-2 rounded hover:bg-lightPrime dark:hover:bg-lightSecondary transition-all duration-200">Reply</button>
         </div>
       `;
         container.appendChild(div);
@@ -232,8 +232,8 @@
         const replyBox = document.createElement("div");
         replyBox.className = "ml-4 border-l-2 border-gray-300 pl-4 space-y-2";
         replyBox.innerHTML = `
-        <p class="text-gray-800">${text}</p>
-        <textarea placeholder="Reply to this..." class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+        <p class="text-gray-600 mb-4 dark:text-gray-50">${text}</p>
+        <textarea placeholder="Reply to this..." class="w-full p-3 border border-gray-300 rounded-md dark:placeholder-gray-400 dark:text-white"></textarea>
         <button onclick="addReply(${threadId}, this.parentElement)" class="mt-1 text-sm text-blue-600 hover:underline">Reply</button>
       `;
 
