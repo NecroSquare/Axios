@@ -14,6 +14,7 @@
         --color-lightSecondaryHover: #9333ea;
         --color-darkText: #f8e7f6;
       }
+     
     </style>
     <link
       rel="stylesheet"
@@ -344,12 +345,14 @@
     <!-- Modals for Preview -->
     <div
       id="python-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">Python Preview</h3>
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
+          Python Preview
+        </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
           A quick look at variables in Python:
         </p>
@@ -367,12 +370,14 @@ print("Value of x is:", x)</code></pre>
     </div>
     <div
       id="ai-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">AI Preview</h3>
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
+          AI Preview
+        </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
           Introduction to AI concepts:
         </p>
@@ -389,12 +394,12 @@ print("Value of x is:", x)</code></pre>
     </div>
     <div
       id="js-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
           JavaScript Preview
         </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
@@ -414,12 +419,14 @@ console.log(message);</code></pre>
     </div>
     <div
       id="pandas-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">Pandas Preview</h3>
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
+          Pandas Preview
+        </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
           A quick look at loading data with Pandas:
         </p>
@@ -438,12 +445,14 @@ print(data)</code></pre>
     </div>
     <div
       id="iot-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">IoT Preview</h3>
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
+          IoT Preview
+        </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
           Introduction to IoT concepts:
         </p>
@@ -460,12 +469,12 @@ print(data)</code></pre>
     </div>
     <div
       id="ethical-ai-modal"
-      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden bg-blur backdrop-blur-sm"
     >
       <div
-        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4"
+        class="modal-content bg-white dark:bg-gray-700 rounded-lg p-6 max-w-sm w-full mx-4 z-50 shadow-2xl"
       >
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+        <h3 class="text-xl font-semibold text-black dark:text-white mb-2">
           Ethical AI Preview
         </h3>
         <p class="text-gray-600 dark:text-gray-200 mb-4">
@@ -485,7 +494,7 @@ print(data)</code></pre>
     </div>
 
     <!-- Sustainability Section -->
-    <section id="sustainability" class="py-16 bg-sky-50 dark:bg-gray-800">
+    <section id="sustainability" class="py-16 bg-sky-50 dark:bg-gray-800 z-10">
       <div class="container mx-auto px-4">
         <h2
           class="text-2xl sm:text-3xl font-bold text-center text-lightPrime dark:text-white mb-12"
@@ -689,6 +698,13 @@ print(data)</code></pre>
     </footer>
 
     <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.remove("hidden");
+      }
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.add("hidden");
+      }
+
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           document
@@ -722,6 +738,10 @@ print(data)</code></pre>
             toggle.classList.add("fa-sun");
           }
         });
+      });
+
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("hidden");
       });
     </script>
   </body>

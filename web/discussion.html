@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body class="bg-gray-100 dark:bg-gray-800">
+  <body class="bg-gray-100 dark:bg-gray-800 mb-24">
     <!-- Header -->
     <header class="bg-white dark:bg-gray-700 shadow-md sticky top-0 z-50">
       <nav
@@ -87,7 +87,7 @@
             </a>
           </li>
           <div class="flex items-center space-x-4">
-            <input
+            <!-- <input
               type="text"
               id="search-bar"
               placeholder="Search courses..."
@@ -98,7 +98,7 @@
               class="bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-4 py-2 rounded hover:bg-gradient-to-r transition-all duration-300 hover:brightness-125"
             >
               Search
-            </button>
+            </button> -->
             <i
               id="dark-mode-toggle"
               class="fas fa-sun dark-mode-toggle text-yellow-500"
@@ -121,13 +121,13 @@
     <!-- Discussions Container -->
     <div id="discussionContainer" class="max-w-5xl mx-auto space-y-10">
       <!-- Dummy Discussion -->
-      <div class="bg-white shadow rounded-lg p-6 dark:bg-gray-700">
+      <div class="bg-white shadow rounded-lg p-6 dark:bg-gray-700 mb-24">
         <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-          🐞 Bug: Cannot login when using Safari
+          🐞 Bug: My code doesn't work at all...
         </h2>
         <p class="text-gray-600 mb-4 dark:text-gray-50">
-          When I try to log in using Safari on macOS, nothing happens after
-          clicking the login button.
+          When I try to learn in AI course, my code doesnt't run like in the
+          course. Is there anything i need to install before doing so?
         </p>
         <div class="ml-4 pl-4 space-y-4" id="thread-0">
           <!-- Replies go here -->
@@ -154,7 +154,9 @@
       class="fixed inset-0 bg-blur backdrop-blur-sm bg-opacity-50 flex items-center justify-center hidden z-50"
     >
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg w-full max-w-xl">
-        <h3 class="text-xl font-semibold mb-4 dark:text-white">New Discussion</h3>
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">
+          New Discussion
+        </h3>
         <input
           type="text"
           id="newTitle"
@@ -204,7 +206,7 @@
 
         const container = document.getElementById("discussionContainer");
         const div = document.createElement("div");
-        div.className = "bg-white shadow rounded-lg p-6 dark:bg-gray-700";
+        div.className = "bg-white shadow rounded-lg p-6 dark:bg-gray-700 mb-24";
         div.innerHTML = `
         <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">${title}</h2>
         <p class="text-gray-600 mb-4 dark:text-gray-50">${body}</p>
@@ -234,7 +236,7 @@
         replyBox.innerHTML = `
         <p class="text-gray-600 mb-4 dark:text-gray-50">${text}</p>
         <textarea placeholder="Reply to this..." class="w-full p-3 border border-gray-300 rounded-md dark:placeholder-gray-400 dark:text-white"></textarea>
-        <button onclick="addReply(${threadId}, this.parentElement)" class="mt-1 text-sm text-blue-600 hover:underline">Reply</button>
+        <button onclick="addReply(${threadId}, this.parentElement)" class="mt-1 text-base text-black dark:text-white hover:brightness-105 hover:underline transition-all duration-300">Reply</button>
       `;
 
         const target = parentEl
