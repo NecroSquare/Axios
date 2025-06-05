@@ -23,6 +23,16 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
+  <script>
+    // Apply dark mode early (BEFORE the DOM paints)
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
   <body class="bg-gray-800 flex items-center justify-center h-screen">
     <div class="flex items-center space-x-4 text-gray-800">
       <a href="index.html" class="text-base text-white md:text-6xl"

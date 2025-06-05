@@ -22,11 +22,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="loading bg-gray-100 dark:bg-gray-700 font-sans dark:text-zinc-100">
+  <script>
+    // Apply dark mode early (BEFORE the DOM paints)
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
 
-    <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-90 transition-opacity duration-500">
+  <body
+    class="loading bg-gray-100 dark:bg-gray-700 font-sans dark:text-zinc-100"
+  >
+    <div
+      id="preloader"
+      class="fixed inset-0 flex items-center justify-center bg-gray-900 z-90 transition-opacity duration-500"
+    >
       <div class="flex space-x-2">
         <h1 class="text-white text-6xl animate-bounce">Wait a moment...</h1>
       </div>
@@ -513,7 +527,8 @@ print(data)</code></pre>
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
-          data-aos="fade-right"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-right"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -528,7 +543,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-left"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-left"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -543,7 +559,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-right"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-right"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -558,7 +575,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-left"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-left"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -573,7 +591,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-right"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-right"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -588,7 +607,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-left"  class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
+            data-aos="fade-left"
+            class="group bg-white dark:bg-gray-600 p-4 mb-6 sm:p-6 rounded-lg shadow-md ring-1 ring-lightPrimeHover transition-all duration-75 hover:scale-105 hover:ring-2 hover:ring-lightSecondaryHover"
           >
             <h3
               class="text-lg sm:text-xl font-semibold text-lightPrime group-hover:text-lightSecondary mb-2 dark:text-gray-300 dark:group-hover:text-purple-400 dark:brightness-150"
@@ -616,7 +636,8 @@ print(data)</code></pre>
         </h2>
         <div class="grid md:grid-cols-4 grid-cols-1 gap-4 md:gap-12">
           <div
-          data-aos="fade-up"  class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+            data-aos="fade-up"
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
           >
             <p
               class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
@@ -632,7 +653,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-up"  class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+            data-aos="fade-up"
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
           >
             <p
               class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
@@ -648,7 +670,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-up"  class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+            data-aos="fade-up"
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
           >
             <p
               class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
@@ -664,7 +687,8 @@ print(data)</code></pre>
             </p>
           </div>
           <div
-          data-aos="fade-up"  class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
+            data-aos="fade-up"
+            class="max-w-md sm:max-w-xl mx-auto bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg hover:translate-y-0 md:hover:translate-y-3.5 hover:shadow-none ring-1 ring-lightPrime hover:ring-2 hover:ring-lightPrimeHover transition-all duration-75"
           >
             <p
               class="text-gray-600 dark:text-gray-200 italic text-sm sm:text-base mb-4"
@@ -735,17 +759,32 @@ print(data)</code></pre>
       document.addEventListener("DOMContentLoaded", function () {
         const toggle = document.getElementById("dark-mode-toggle");
         const html = document.documentElement;
+        const savedTheme = localStorage.getItem("theme");
+
+        // Show correct icon on initial load
+        if (savedTheme === "dark") {
+          toggle.classList.remove("fa-sun");
+          toggle.classList.add("fa-moon");
+          toggle.classList.remove("text-yellow-500");
+          toggle.classList.add("text-blue-300");
+        } else {
+          toggle.classList.remove("fa-moon");
+          toggle.classList.add("fa-sun");
+          toggle.classList.remove("text-blue-300");
+          toggle.classList.add("text-yellow-500");
+        }
+
         toggle.addEventListener("click", function () {
           html.classList.toggle("dark");
           const isDark = html.classList.contains("dark");
           localStorage.setItem("theme", isDark ? "dark" : "light");
 
           if (isDark) {
-            toggle.classList.remove("fa-sun");
-            toggle.classList.add("fa-moon");
+            toggle.classList.remove("fa-sun", "text-yellow-500");
+            toggle.classList.add("fa-moon", "text-blue-300");
           } else {
-            toggle.classList.remove("fa-moon");
-            toggle.classList.add("fa-sun");
+            toggle.classList.remove("fa-moon", "text-blue-300");
+            toggle.classList.add("fa-sun", "text-yellow-500");
           }
         });
       });
@@ -754,37 +793,36 @@ print(data)</code></pre>
         document.getElementById("nav-menu").classList.toggle("hidden");
       });
 
-        window.addEventListener("load", () => {
-      setTimeout(() => {
-        const preloader = document.getElementById("preloader");
-        if (preloader) {
-          preloader.style.opacity = "0";
-          preloader.style.pointerEvents = "none";
-          preloader.style.transition = "opacity 0.5s ease-out";
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const preloader = document.getElementById("preloader");
+          if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.pointerEvents = "none";
+            preloader.style.transition = "opacity 0.5s ease-out";
 
-          // Re-enable scroll by removing 'loading' class
-          document.body.classList.remove("loading");
+            // Re-enable scroll by removing 'loading' class
+            document.body.classList.remove("loading");
 
-          setTimeout(() => {
-            preloader.style.display = "none";
-          }, 500); // After fade-out
-        }
-      }, 2000); // 2-second delay
-    });
-
+            setTimeout(() => {
+              preloader.style.display = "none";
+            }, 500); // After fade-out
+          }
+        }, 2000); // 2-second delay
+      });
     </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // Animation duration in ms
-      easing: 'ease-in-out', // Easing style
-      once: true // Animate only once
-    });
+    <script>
+      AOS.init({
+        duration: 800, // Animation duration in ms
+        easing: "ease-in-out", // Easing style
+        once: true, // Animate only once
+      });
 
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
-  </script>
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
   </body>
 </html>
