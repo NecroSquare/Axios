@@ -21,8 +21,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-100 dark:bg-gray-800 font-sans">
+  <body class="loading bg-gray-100 dark:bg-gray-800 font-sans">
+    <div
+      id="preloader"
+      class="fixed inset-0 flex items-center justify-center bg-gray-900 z-90 transition-opacity duration-500"
+    >
+      <div class="flex space-x-2">
+        <h1 class="text-white text-6xl animate-bounce">Wait a moment...</h1>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="bg-white dark:bg-gray-700 shadow-md sticky top-0 z-50">
       <nav
@@ -275,6 +285,39 @@ print(f"Predicted energy for tomorrow: {prediction} kWh")
           }
         });
       });
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const preloader = document.getElementById("preloader");
+          if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.pointerEvents = "none";
+            preloader.style.transition = "opacity 0.5s ease-out";
+
+            // Re-enable scroll by removing 'loading' class
+            document.body.classList.remove("loading");
+
+            setTimeout(() => {
+              preloader.style.display = "none";
+            }, 500); // After fade-out
+          }
+        }, 2000); // 2-second delay
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Animation duration in ms
+        easing: "ease-in-out", // Easing style
+        once: true, // Animate only once
+      });
+
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
     </script>
   </body>
 </html>
