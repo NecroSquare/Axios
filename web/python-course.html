@@ -258,14 +258,7 @@ print(f"Your carbon footprint: {footprint} kg CO2")
             .forEach((modal) => modal.classList.add("hidden"));
         }
       });
-      document.querySelectorAll("a[href]").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          if (link.href.includes("course")) {
-            if (!confirm("Are you ready to start learning?"))
-              e.preventDefault();
-          }
-        });
-      });
+      
 
       // Dark-mode enabler
       document.addEventListener("DOMContentLoaded", function () {

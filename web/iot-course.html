@@ -388,14 +388,7 @@ print(monitor_farm(25, 60))  # Output: Farm conditions are good.
             .forEach((modal) => modal.classList.add("hidden"));
         }
       });
-      document.querySelectorAll("a[href]").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          if (link.href.includes("course")) {
-            if (!confirm("Are you ready to start learning?"))
-              e.preventDefault();
-          }
-        });
-      });
+      
 
       // Dark-mode enabler
       document.addEventListener("DOMContentLoaded", function () {
