@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --color-lightPrime: #3b82f6;
+        --color-lightSecondary: #a855f7;
+        --color-lightPrimeHover: #2563eb;
+        --color-lightSecondaryHover: #9333ea;
+        --color-darkSecondary: #4b164c;
+        --color-darkSecondaryHover: #7a1cac;
+        --color-darkText: #f8e7f6;
+      }
+      body.loading {
+        overflow: hidden;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
+  </head>
+  <script>
+    // Apply dark mode early (BEFORE the DOM paints)
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
+  <body class="bg-gray-800 flex items-center justify-center h-screen">
+    <div class="flex items-center space-x-4 text-gray-800">
+      <a href="index.html" class="text-base text-white md:text-6xl"
+        >404 | COMING SOON</a
+      >
+    </div>
+  </body>
+</html>
